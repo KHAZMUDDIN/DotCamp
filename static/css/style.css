@@ -1,0 +1,247 @@
+/* ======================For whole page================================ */
+*{
+    font-size: Arial;
+    margin: 0px;
+    padding: 0px;
+}
+/* ==============================Navigation bar=============================== */
+
+.NavBar{
+    width: 100%;
+    height: 40px;
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+}
+
+.NavUl{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+    
+.NavItem{
+    display: inline-block;
+    font-weight: bold;
+}
+
+.NavLink{
+    text-decoration: none;
+    color: black;
+}
+.NavLink:hover{
+    color: #db1515;
+}
+/* ==============================Mian logo(Top Left)==================================== */
+.Title{
+    color: darkblue;
+    font-weight: bold;
+    font-size: larger;
+}
+.Title a{
+    text-decoration: none;
+}
+
+/* ========================css on the nav item which was currently opened========================= */
+.active{
+    text-decoration: underline;
+    text-decoration-color: darkblue;
+    text-decoration-thickness: 2px;
+}
+.active a:hover{
+    color: black;
+}
+/* =============================Footer======================================== */
+.footer{
+    width: 100%;
+    height: 200px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+/* ==========================Heaing================================== */
+.heading{
+    text-align: center;
+    color:darkblue;
+    padding-top: 20px;
+}
+
+/* ============================Form========================================== */
+/* styles.css */
+
+.category-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}
+
+.form-select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #db7633;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.form-button:hover {
+    background-color: #db1515;
+    color: #333;
+    font-weight: bold;
+}
+
+/* ==========================Table=================================== */
+
+.table-wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    z-index: 1;
+    height: 30px;
+}
+
+.imgCell {
+    width: 60px; /* Adjusted to fit the logo */
+}
+
+.nameCell {
+    width: 150px;
+}
+
+.logo-column img,
+.compLogo {
+    width: 40px;  /* Fixed width for all logos */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Margin between logo and name */
+    display: block;
+}
+
+.name-column {
+    padding-left: 10px;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: left;
+}
+
+/* Ensure the containing element has proper overflow settings */
+.table-wrapper {
+    max-height: 72vh; /* Set max height to allow scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Apply sticky positioning to the table head row */
+thead .sticky{
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: white; /* Background color to prevent content from showing through */
+    z-index: 100; /* Ensure the sticky header stays on top */
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4); /* Optional: Add a shadow for better visibility */
+}
+
+/* Optional: Add some styling to your table headers */
+thead th{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd; /* Add a bottom border for better visibility */
+}
+
+
+/* ======================== <html returnrs table> =============================== */
+
+.MonRet {
+    text-align: center;
+    font-size: 25px;
+    color: darkgreen;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+/* Define styles for the container */
+.specific-table-container {
+    max-width: calc(100% - 10px); /* 100% of window width minus 5px padding on each side */
+    max-height: 80vh; /* 100% of viewport height */
+    padding: 5px; /* 5px padding on all sides */
+    overflow: auto; /* Enable scrolling if content exceeds container height */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+}
+
+/* Ensure the table doesn't exceed container width */
+.specific-table {
+    width: 100%; /* Table width 100% of its container */
+}
+
+/* Optional: Style the table with some basic styling */
+.specific-table {
+    border-collapse: collapse; /* Collapse table borders */
+    border: 1px solid #ddd; /* Add a border for clarity */
+}
+
+.specific-table th, .specific-table td {
+    padding: 8px; /* Padding inside table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add cell borders */
+}
+
+
+
+
+
+

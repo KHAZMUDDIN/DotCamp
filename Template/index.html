@@ -1,0 +1,93 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load static %}
+<main class="main">
+    <h1 class="heading">Largest Publically Listed Company by Market Capital in India(NSE) </h1>
+
+    <form method="get" action="" class="category-form" id="category-form">
+        <div class="form-group">
+            <label for="category" class="form-label">Select Industry:</label>
+            <select name="category" id="category" class="form-select">
+                {% for category in categories %}
+                <option value="{{ category }}" {% if category == selected_category %}selected{% endif %}>{{ category }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="form-button">Submit</button>
+        </div>
+    </form>
+
+
+    <div class="table-wrapper">
+        <table class="table">
+            <tbody>
+                <!-- Adding the tableIndex row above the header row -->
+                <tr class="dataRowIndex sticky">
+                    <td class="counterCell"></td>
+                    <td class="imgCell logo-column">
+                        <img src="{% static 'images/Nifty_50.png' %}" class="compLogo" alt="Company Logo">
+                    </td>
+                    <td class="nameCell name-column">Nifty 50</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ retIndex.Price }}</td>
+                    <td class="right-align {% if retIndex.1Day != 'NaN' %}{% if retIndex.1Day >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.1Day }}%</td>
+                    <td class="right-align {% if retIndex.1Week != 'NaN' %}{% if retIndex.1Week >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.1Week }}%</td>
+                    <td class="right-align {% if retIndex.1Month != 'NaN' %}{% if retIndex.1Month >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.1Month }}%</td>
+                    <td class="right-align {% if retIndex.3Months != 'NaN' %}{% if retIndex.3Months >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.3Months }}%</td>
+                    <td class="right-align {% if retIndex.6Months != 'NaN' %}{% if retIndex.6Months >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.6Months }}%</td>
+                    <td class="right-align {% if retIndex.1Year != 'NaN' %}{% if retIndex.1Year >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.1Year }}%</td>
+                    <td class="right-align {% if retIndex.5Years != 'NaN' %}{% if retIndex.5Years >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ retIndex.5Years }}%</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr class="sticky">
+                    <th class="counterCell">Rank</th>
+                    <th class="imgCell logo-column"></th>
+                    {% for column in data.0.keys %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Existing rows from the second table -->
+                {% for row in data %}
+                <tr class="dataRow">
+                    <td class="counterCell">{{forloop.counter}}</td>
+                    <td class="imgCell logo-column"><img src="{% static 'images/company logos/' %}{{ row.Name }}.png" class="compLogo" alt="Company Logo"></td>
+                    <td class="nameCell name-column">{{ row.Name }}</td>
+                    <td>{{ row.MarketCap }}</td>
+                    <td>{{ row.PERatio }}</td>
+                    <td>{{ row.City }}</td>
+                    <td>{{ row.Price }}</td>
+                    <td class="{% if row.1Day != 'NaN' %}{% if row.1Day >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.1Day }}%</td>
+                    <td class="{% if row.1Week != 'NaN' %}{% if row.1Week >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.1Week }}%</td>
+                    <td class="{% if row.1Month != 'NaN' %}{% if row.1Month >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.1Month }}%</td>
+                    <td class="{% if row.3Months != 'NaN' %}{% if row.3Months >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.3Months }}%</td>
+                    <td class="{% if row.6Months != 'NaN' %}{% if row.6Months >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.6Months }}%</td>
+                    <td class="{% if row.1Year != 'NaN' %}{% if row.1Year >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.1Year }}%</td>
+                    <td class="{% if row.5Years != 'NaN' %}{% if row.5Years >= 0 %}positive{% else %}negative{% endif %}{% endif %}">{{ row.5Years }}%</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <div class="MonRet">Monthly Returns of the Stocks</div>
+
+    <div class="specific-table-container">
+        <table class="specific-table">
+            {{ html_table|safe }}
+        </table>
+    </div>
+</main>
+{% endblock %}
+

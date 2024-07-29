@@ -1,0 +1,32 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+    <header>
+        <!------------------------------------- Navigation bar------------------------------------------->
+        <nav class="NavBar">
+            <ul class="NavUl">
+                <div class="NavItem Title"><a href="{% url 'home' %}">DonFin</a></div>
+                <li class="{% if request.path == '/' %}active{% endif %} NavItem"><a class="NavLink" href="{% url 'home' %}">Home</a></li>
+                <li class="{% if request.path == '/about/' %}active{% endif %} NavItem"><a class="NavLink" href="{% url 'about' %}">About</a></li>
+                <li class="{% if request.path == '/stock/' %}active{% endif %} NavItem"><a class="NavLink" href="{% url 'stock' %}">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        {% block content %}
+        {% endblock %}
+
+    <footer>
+        <p class="footer">&copy; 2024 Khazmuddin</p>
+    </footer>
+</body>
+</html>
+
+

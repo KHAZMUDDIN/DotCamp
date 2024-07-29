@@ -1,0 +1,11 @@
+# # Download the all companies of nse website(https://www.nseindia.com/regulations/listing-compliance/nse-market-capitalisation-all-companies)
+# # Format the file as it contains only two columns name (Symbol, Company Name) remove all the companies rows which are
+# # currently not listed and other utt pattang texts. and name the file as <NSE_AllComp_28MAR2024.xlsx> change the date part from the file.
+# # all the fills which will be read and write by this <NSE_ALL_Companies.py> file will be done within the folder
+# # <E:\KHAZMUDDIN\BTECH\PYTHON\Django Projects\DonFin\static\> of this PC
+# # paste the file path in the below 'path' variable and run the code and will generate an .xlsx file in the same folder (/static)
+# # name <Name_Ind_NSEID.xlsx>
+# # also create an excel file name <All_YInd.xlsx> whithin the same folder(/static) which has only one column name(Ind) which contains
+# # all the unique <industry> name of the <Ind> column of the generated <Name_Ind_NSEID.xlsx> file.
+
+the 'path' variable is in the python file which name is <E:\KHAZMUDDIN\BTECH\PYTHON\py_projects\PyStock\MyGitHub\MyModules\NSE_All_Companies.py>

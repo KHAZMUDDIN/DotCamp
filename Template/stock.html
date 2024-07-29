@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Stock{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>DonFin Screener</h2>
+    <form method="get">
+        <label for="inputText">Enter Company Symbol:</label>
+        <input type="text" id="inputText" name="inputText" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<div class="container">
+    <h1>Stock: {{Name}} MarketCap: {{MCap}}</h1>
+    {{BSummary}}
+    <p>Welcome to our stock page! Stay tuned for updates and articles.</p>
+</div>
+{% endblock %}
